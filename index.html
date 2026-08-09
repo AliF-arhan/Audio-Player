@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Audio Player</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-zinc-950 text-zinc-100 flex items-center justify-center min-h-screen font-sans">
+
+    <!-- Main Player Container -->
+    <div class="bg-zinc-900 border border-zinc-800 shadow-2xl rounded-2xl w-full max-w-sm p-6 flex flex-col items-center">
+        
+        <!-- Header / Top Bar -->
+        <div class="w-full flex justify-between items-center mb-6 text-zinc-400">
+            <button class="hover:text-white transition" aria-label="Minimize">
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <span class="text-xs uppercase tracking-widest font-semibold text-zinc-500">Now Playing</span>
+            <button class="hover:text-white transition" aria-label="Settings">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+        </div>
+
+        <!-- Song Image / Album Art Section -->
+        <div class="relative w-64 h-64 mb-6 group">
+
+            <!-- Displayed Dynamically -->
+            <img id="album-art" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80" 
+                 alt="Album Art" 
+                 class="songImage w-full h-full object-cover rounded-xl shadow-lg border border-zinc-800 group-hover:scale-[1.02] transition duration-300">
+            <!-- Optional subtle glow effect -->
+            <div class="absolute inset-0 bg-indigo-500/10 rounded-xl filter blur-xl -z-10 opacity-50"></div>
+        </div>
+
+        <!-- Song Metadata -->
+        <div class="w-full text-center mb-6">
+            <!-- Would bee rendered dynamically -->
+            <h2 id="song-title" class="songName text-lg font-bold text-white truncate">Song Title</h2>
+            <p id="song-artist" class="songArtist text-sm text-zinc-400 truncate mt-1">Song Artist</p>
+        </div>
+
+        <!-- Progress Bar Section -->
+        <div class="w-full mb-6">
+            <!-- Range Slider -->
+            <input type="range" id="progress-bar" value="0" min="0" max="100" 
+                   class="w-full h-1.5 bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-indigo-500">
+            <!-- Timestamps -->
+            <div class="flex justify-between items-center text-xs text-zinc-500 mt-2">
+                <span id="current-time">0:00</span>
+                <span id="duration">3:45</span>
+            </div>
+        </div>
+
+        <!-- Player Controls Section -->
+        <div class="w-full flex items-center justify-between px-4">
+            <!-- Shuffle Button -->
+            <button id="shuffle-btn" class="text-zinc-400 hover:text-white transition text-lg" aria-label="Shuffle">
+                <i class="fa-solid fa-shuffle"></i>
+            </button>
+
+            <!-- Previous Track -->
+            <button id="prev-btn" class="text-zinc-200 hover:text-indigo-400 transition text-xl" aria-label="Previous">
+                <i class="fa-solid fa-backward-step"></i>
+            </button>
+
+            <!-- Play / Pause Button -->
+            <button id="play-btn" class="w-14 h-14 bg-indigo-600 hover:bg-indigo-500 text-white rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition duration-200 text-xl" aria-label="Play/Pause">
+                <i id="play-icon" class="fa-solid fa-play ml-0.5"></i>
+            </button>
+
+            <!-- Next Track -->
+            <button id="next-btn" class="text-zinc-200 hover:text-indigo-400 transition text-xl" aria-label="Next">
+                <i class="fa-solid fa-forward-step"></i>
+            </button>
+
+            <!-- Repeat Button -->
+            <button id="repeat-btn" class="text-zinc-400 hover:text-white transition text-lg" aria-label="Repeat">
+                <i class="fa-solid fa-repeat"></i>
+            </button>
+        </div>
+
+    </div>
+
+
+    <script type="module" src="script.js"></script>    
+</body>
+</html>
