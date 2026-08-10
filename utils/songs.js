@@ -1,14 +1,14 @@
 export let songs = [
     {
-        title: "Song Title 1",
-        artist: "Song Artist 1",
-        image: "song1.jpg",
-        audio: "song1.mp3"
+        title: "Beautiful Dream",
+        artist: "Diego Nava",
+        image: "../Assets/images/beautifulDream.jpg",
+        audio: "../Assets/.mp3 files/mixkit-beautiful-dream-493.mp3"
     },
     {
-        title: "Song Title 2",
-        artist: "Song Artist 2",
-        image: "song2.jpg",
-        audio: "song2.mp3"
+        title: "Valley Sunset",
+        artist: "Alejandro Magaña (A. M.)",
+        image: "../Assets/images/valleySunset.jpg",
+        audio: "../Assets/.mp3 files/mixkit-valley-sunset-127.mp3"
     }
 ];
